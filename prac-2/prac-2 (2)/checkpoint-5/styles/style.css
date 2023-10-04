@@ -1,0 +1,32 @@
+.button {
+    background-color: #ff8f00;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .button:hover {
+    background-color: #f57c00;
+  }
+
+  /* #quiz {
+    width: 400px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: left !important; 
+  } */
+
+/*   
+  .next-button-container {
+    text-align: center;
+    margin-top: 10px;
+    margin-top: 20px; 
+  } */
+  

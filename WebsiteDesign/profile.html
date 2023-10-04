@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="grey-bar">
+        <span class="logo">TLDR</span>
+        <a href="AboutUs.html" class="button">AboutUs</a>
+        <a href="ContactUs.html" class="bottom-link">ContactUs</a>
+
+        <a href="signup.html" class="button signup">SignUp</a>
+        <a href="login.html" class="button login">LogIn</a>
+    </div>
+
+    <div class="middle-text">
+        Create your Profile
+    </div>
+    <div class="containerforinfo">
+        <div class="columnthing">
+            <form id="profileForm" action="SOMEOTHERPAGE23.html" method="post">
+                <div>
+                    <label class="form-label" for="firstName">First Name:</label>
+                    <input class="input-field" type="text" id="firstName" name="firstName" required>
+                </div>
+                <div>
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="input-field" type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label class="form-label" for="password">Password:</label>
+                    <input class="input-field" type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label class="form-label" for="state">State:</label>
+                    <select class="select-field" id="state" name="state" required>
+                        <option value="NSW">New South Wales</option>
+                        <option value="VIC">Victoria</option>
+                        <option value="QLD">Queensland</option>
+                        <option value="WA">Western Australia</option>
+                        <option value="SA">South Australia</option>
+                        <option value="TAS">Tasmania</option>
+                        <option value="ACT">Australian Capital Territory</option>
+                        <option value="NT">Northern Territory</option> 
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label" for="address">Address:</label>
+                    <input class="address-field" type="text" id="address" name="address" required>
+                </div>
+            </form>
+        </div>
+
+        <div class="columnthing">
+            <form>
+                <div>
+                    <label class="form-label" for="surname">Surname:</label>
+                    <input class="input-field" type="text" id="surname" name="surname" required>
+                </div>
+                <div>
+                    <label class="form-label" for="dob">Date of Birth (MM-DD-YYYY):</label>
+                    <input class="input-field" type="text" id="dob" name="dob" placeholder="MM-DD-YYYY" required>
+                </div>
+                <div>
+                    <label class="form-label" for="phone">Phone Number:</label>
+                    <input class="input-field" type="tel" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label class="form-label" for="license">License Number:</label>
+                    <input class="input-field" type="text" id="license" name="license" required> 
+                </div>
+                <div class="image-upload">
+                    <label for="driverLicenseImage">Upload Driver's License Image:</label>
+                    <input type="file" id="driverLicenseImage" name="driverLicenseImage">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="checkboxes" style="text-align: center; margin-top: 20px;">
+        <label>
+            <input type="checkbox" name="agree" value="agree" required>
+            I agree to TLDR privacy, terms and conditions specified <a href="here.html">here</a>.
+        </label>
+        <br>
+        <label> 
+            <input type="checkbox" name="learner" value="learner" required>
+            I declare that I have a learner's license and passed the hazard perception test.
+        </label>
+    </div>
+
+    <div class="next-button">
+        <button class="button signup" style="padding: 20px 40px; font-size: 22px;" onclick="validateAndSubmit()">Next</button>
+    </div>
+
+    <div class="bottom-bar">
+        <a href="TLDR2023.html" class="bottom-link">2023 TLDR. All rights reserved</a>
+    </div>
+
+    <script>
+        function validateAndSubmit() {
+            const requiredFields = document.querySelectorAll('[required]');
+            let allFieldsComplete = true;
+
+            for (const field of requiredFields) {
+                if (!field.value) {
+                    allFieldsComplete = false;
+                    break;
+                }
+            }
+
+            const fileInput = document.getElementById('driverLicenseImage');
+            if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+                allFieldsComplete = false;
+            }
+            const privacyCheckbox = document.querySelector('[name="agree"]');
+            const learnerCheckbox = document.querySelector('[name="learner"]');
+            if (!privacyCheckbox.checked || !learnerCheckbox.checked) {
+                allFieldsComplete = false;
+            }
+
+            if (allFieldsComplete) {
+                document.getElementById('profileForm').submit();
+            } else {
+                alert('Please fill in all required fields, upload a drivers license image, and check both checkboxes.');
+            }
+        }
+    </script>
+</body>
+</html>

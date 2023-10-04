@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Edwin">
+  <meta name="description" content="Practical 2">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Practical 2</title>
+  <style>
+    body {
+      background-color: #f5f5f6;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 14px;
+    }
+    
+    .content {
+      width: 400px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: white;
+      border: 1px solid #d2d2d2;
+      box-sizing: border-box;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #dddddd;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #ff8f00;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #f57c00;
+    }
+
+    #quiz {
+    width: 400px; 
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    margin: 20px auto;
+    
+    }
+    #quiz p {
+      font-weight: bold;
+      color: #ff8f00;
+    }
+    #quiz ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #quiz li {
+      border: 1px solid #dddddd;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      
+    }
+    #quiz label {
+      margin-left: 10px;
+    }
+    #player-name {
+      color: #000000;
+      font-weight: bold;
+      margin-left: 1px;
+      
+    }
+    .next-button-container {
+      text-align: left;
+      margin-top: -60px;
+      margin-left: 432px;
+    }
+    h1{
+      margin-left:500px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Hello, <b id="player-name">Player</b>. Let's begin.</h1>
+
+    <div id="quiz">
+      <p id="question-number">Question N</p>
+      <p id="question-text">Question text should appear here</p>
+      <ul>
+        <li>
+          <input type="radio" name="choices" id="A" value="A" />
+          <label for="A" id="choice-A">Choice A</label>
+        </li>
+        <li>
+          <input type="radio" name="choices" id="B" value="B" />
+          <label for="B" id="choice-B">Choice B</label>
+        </li>
+        <li>
+          <input type="radio" name="choices" id="C" value="C" />
+          <label for="C" id="choice-C">Choice C</label>
+        </li>
+      </ul>
+    </div>
+
+   
+    <div class="next-button-container">
+    <input type="button" class="button" id="next-button" value="Next">
+    </div>
+  </div>
+  <script src="scripts/provided-script.js" defer></script>
+  <script src="scripts/my-script.js" defer></script>
+</body>
+</html>
